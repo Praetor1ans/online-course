@@ -13,3 +13,14 @@
 
 command1 = 'switchport trunk allowed vlan 1,2,3,5,8'
 command2 = 'switchport trunk allowed vlan 1,3,8,9'
+
+#Парсим command1 и делаем множество
+com1split = command1.split() 
+vlan1= set(com1split[-1].split(','))
+
+#Парсим command2  и делаем множество
+com2split = command2.split() 
+vlan2= set(com2split[-1].split(','))
+
+#Делаем из множества список пересечений между vlan1 и vlan2
+result = list(vlan1 & vlan2)
