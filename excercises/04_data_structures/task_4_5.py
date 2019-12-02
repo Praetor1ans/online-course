@@ -23,4 +23,4 @@ com2split = command2.split()
 vlan2= set(com2split[-1].split(','))
 
 #Делаем из множества список пересечений между vlan1 и vlan2
-result = list(vlan1 & vlan2)
+result = list(sorted(vlan1 & vlan2))

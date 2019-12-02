@@ -10,3 +10,6 @@
 '''
 
 mac = 'AAAA:BBBB:CCCC'
+parsing = mac.replace(':', '')
+hexad = int(parsing, 16)
+result = bin(hexad)[2:]
