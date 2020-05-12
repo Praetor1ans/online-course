@@ -52,7 +52,6 @@ q = int(lastmask[2:10],2)
 w = int(lastmask[10:18],2)
 e = int(lastmask[18:26],2)
 r = int(lastmask[26:33],2)   
- 
 
 x = a & q
 y = b & w

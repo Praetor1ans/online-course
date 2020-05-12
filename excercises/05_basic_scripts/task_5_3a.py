@@ -11,6 +11,21 @@
 То есть эту задачу можно решить без использования условия if и циклов for/while.
 '''
 
+port_type = input('Введите режим работы интерфейса (access/trunk): ')
+interface = input('Введите тип и номер интерфейса: '	)
+
+mode = port_type.count('trunk')
+
+modes = [
+['Enter VLAN number: '],
+['Enter allowed VLANs: ']
+]
+
+
+vlan = input(' '.join(modes[mode]))
+
+
+
 access_template = [
     'switchport mode access', 'switchport access vlan {}',
     'switchport nonegotiate', 'spanning-tree portfast',
@@ -21,3 +36,10 @@ trunk_template = [
     'switchport trunk encapsulation dot1q', 'switchport mode trunk',
     'switchport trunk allowed vlan {}'
 ]
+
+templates = {'access': access_template, 'trunk': trunk_template}
+
+port_type_final = templates.get(port_type)
+
+print('interface {}'.format(interface))
+print('\n'.join(port_type_final).format(vlan))

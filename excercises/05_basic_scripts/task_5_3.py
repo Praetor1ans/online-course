@@ -46,7 +46,9 @@ switchport trunk allowed vlan 2,3,4,5
 '''
 port_type = input('Введите режим работы интерфейса (access/trunk): ')
 interface = input('Введите тип и номер интерфейса: ')
-vlan = input('Введите номер влан(ов): ')
+
+value = {'access': 'Введите номер влана: ', 'trunk': 'Введите номер влан(ов): '}
+vlan = input(value.get(port_type, 'Неверное значение'))	
 
 
 
